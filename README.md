@@ -11,11 +11,15 @@ The hotkey defaults to <kbd>Esc</kbd>. Use the `deselect` command in your key bi
 
 ```json
 [
-    { 
-      "keys": ["escape"], "command": "deselect"
-    }
+  { "keys": ["escape"], "command": "deselect", "context":
+      [
+          { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }
+      ]   
+  }
 ]
 ```
+
+Please make sure to include the `context` in your custom key binding as it might otherwise interfere with other Sublime functions.
 
 ## License
 
